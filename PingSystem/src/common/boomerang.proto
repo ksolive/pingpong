@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package notify;
+
+// The greeting service definition.
+service NotifyService {
+  rpc SendMsg (PayloadWithRes) returns (Payload) {}
+}
+
+message Payload {
+  bytes data = 1;
+}
+
+message PayloadWithRes {
+  uint64 reserved = 1;
+  bytes data = 2;
+}
+

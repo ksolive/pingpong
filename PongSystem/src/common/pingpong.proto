@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package pingpong;
+
+// The greeting service definition.
+service PingpongService {
+  rpc SendMsg (PayloadWithRes) returns (Payload) {}
+}
+
+message Payload {
+  bytes data = 1;
+}
+
+message PayloadWithRes {
+  uint64 reserved = 1;
+  bytes data = 2;
+  bool read_write = 3;
+}
+
+

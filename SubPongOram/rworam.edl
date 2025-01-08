@@ -1,0 +1,16 @@
+enclave {
+  from "openenclave/edl/logging.edl" import *;
+  from "openenclave/edl/syscall.edl" import *;
+  from "platform.edl" import *;
+
+  trusted {
+    public void rworam_sync_reset();
+    public void rworam_write([in, count=buf_size] const uint8_t *buf, size_t buf_size);
+    public void rworam_read([in, out, count=buf_size] uint8_t *buf, size_t buf_size);
+    public void rworam_init(size_t layer_num, size_t batch_num);
+    public void rworam_clear();
+    public void rworam_oblsort_worker(size_t tid);
+  };
+
+  untrusted {};
+};
