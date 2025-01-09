@@ -141,7 +141,7 @@ public:
     }
 
     uint64_t hashFunction(int sender, int receiver, size_t round_num) {
-        std::hash<int> intHash;  // 使用 std::hash<int> 进行整数的哈希
+        std::hash<int> intHash;  
         size_t combinedHash = intHash(sender) ^ intHash(receiver) ^ std::hash<size_t>{}(round_num);
         uint64_t result = static_cast<uint64_t>(combinedHash);
         return result;

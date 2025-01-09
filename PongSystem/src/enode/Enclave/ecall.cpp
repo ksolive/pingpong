@@ -190,7 +190,7 @@ public:
         try {
             // Dedup, decrypt and restore pkt
             DDR(in_data, pkt_num, pkt_size, pkts_);
-            // 检查下这里解密出来的是什么样子的
+            
             eprintf("pkt recive size: %d", pkts_.size());
             int64_t intime;
             int64_t outtime;

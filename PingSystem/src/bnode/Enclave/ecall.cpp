@@ -53,7 +53,6 @@ public:
     }
     ~Enclave() {
     }
-// BREAK 这有问题，还要考虑bpadding
     struct DDID_Sentinel_Sorter{
         bool operator()(const Pkt& a, const Pkt& b){
             bool pred = ObliviousEqual(a.head.dd_id.highest, b.head.dd_id.highest);

@@ -88,7 +88,7 @@ void create_enclave(const std::string& enclave_filename)
      *         if there is no token, then create a new one.
      */
      /* try to get the token saved in $HOME */
-    const char* home_dir = getpwuid(getuid())->pw_dir; // 获取$HOME目录
+    const char* home_dir = getpwuid(getuid())->pw_dir; 
 
     if (home_dir != NULL && (strlen(home_dir) + strlen("/") +
         sizeof(TOKEN_FILENAME) + 1) <= MAX_PATH)
@@ -109,7 +109,7 @@ void create_enclave(const std::string& enclave_filename)
     {
         printf("Warning: Failed to create/open the launch token file \"%s\".\n",
             token_path);
-    } // 若$HOME下不存在token文件，则创建
+    } 
 
     if (fp != NULL)
     {

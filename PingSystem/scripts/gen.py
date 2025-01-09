@@ -64,16 +64,14 @@ def write_to_bash_script(commands, output_file):
 
 def append_interaction_to_file(file_path):
     bash_script = '''
-# 输出提示信息
-echo "按 k 清除环境"
 while :
 do
     read -n 1 -r input
     if [ "$input" = "k" ]; then
-        echo "继续运行"
+        echo "keep running"
         break
     else
-        echo "输入非 'k'，继续等待"
+        echo "Press 'k' to keep running"
     fi
 done
 '''
